@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */; };
 		84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */; };
 		84ACF60F1E4BFEE300B7E390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF60E1E4BFEE300B7E390 /* ViewController.swift */; };
 		84ACF6121E4BFEE300B7E390 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ACF6101E4BFEE300B7E390 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieGetter.swift; sourceTree = "<group>"; };
 		84ACF6091E4BFEE300B7E390 /* CinemaSideKick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemaSideKick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84ACF60E1E4BFEE300B7E390 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				84ACF6131E4BFEE300B7E390 /* Assets.xcassets */,
 				84ACF6151E4BFEE300B7E390 /* LaunchScreen.storyboard */,
 				84ACF6181E4BFEE300B7E390 /* Info.plist */,
+				00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */,
 			);
 			path = CinemaSideKick;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				84ACF60F1E4BFEE300B7E390 /* ViewController.swift in Sources */,
 				84ACF62D1E4C031500B7E390 /* RatingControl.swift in Sources */,
 				84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */,
+				00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +411,7 @@
 				84ACF6281E4BFEE300B7E390 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84ACF6291E4BFEE300B7E390 /* Build configuration list for PBXNativeTarget "CinemaSideKickTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				84ACF62B1E4BFEE300B7E390 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
