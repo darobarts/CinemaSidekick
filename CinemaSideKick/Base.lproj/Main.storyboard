@@ -36,8 +36,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cT7-xD-U9U">
                                 <rect key="frame" x="9" y="372" width="350" height="282"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="pOW-ik-aYa" userLabel="Info Stack">
-                                        <rect key="frame" x="0.0" y="6" width="350" height="385"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pOW-ik-aYa" userLabel="Info Stack">
+                                        <rect key="frame" x="0.0" y="6" width="350" height="327.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hVI-bq-oma" userLabel="UserRating Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
@@ -58,7 +58,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWF-aL-f5q" userLabel="Director Stack">
-                                                <rect key="frame" x="0.0" y="40" width="350" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="45" width="350" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaZ-Xr-bib">
                                                         <rect key="frame" x="0.0" y="0.0" width="194" height="20.5"/>
@@ -78,7 +78,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYK-hm-Wp2" userLabel="Release Stack">
-                                                <rect key="frame" x="0.0" y="60.5" width="350" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="70.5" width="350" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf2-97-msk">
                                                         <rect key="frame" x="0.0" y="0.0" width="232" height="20.5"/>
@@ -98,7 +98,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3DQ-Pq-sOW" userLabel="Genre Stack">
-                                                <rect key="frame" x="0.0" y="81" width="350" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="96" width="350" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5E-u5-MWe">
                                                         <rect key="frame" x="0.0" y="0.0" width="307" height="20.5"/>
@@ -117,36 +117,36 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-fQ-d6d" userLabel="Actor Stack">
-                                                <rect key="frame" x="0.0" y="101.5" width="350" height="54"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-fQ-d6d" userLabel="Actor Stack">
+                                                <rect key="frame" x="0.0" y="121.5" width="350" height="57.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actors:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kj-vT-36N">
-                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="54"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eg-7D-7q3">
-                                                        <rect key="frame" x="175" y="0.0" width="175" height="54"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <rect key="frame" x="175" y="0.0" width="175" height="57.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9AU-ES-axV" userLabel="Plot Stack">
-                                                <rect key="frame" x="0.0" y="155.5" width="350" height="229.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9AU-ES-axV" userLabel="Plot Stack">
+                                                <rect key="frame" x="0.0" y="184" width="350" height="143.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Synopsis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2h-4A-LZL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="229.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlg-i3-epa">
-                                                        <rect key="frame" x="175" y="0.0" width="175" height="229.5"/>
-                                                        <string key="text">A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.  EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <rect key="frame" x="175" y="0.0" width="175" height="143.5"/>
+                                                        <string key="text">A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers. This is a sci/fi adventure for the ages.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -158,6 +158,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="88D-jz-Mev"/>
                                     <constraint firstItem="pOW-ik-aYa" firstAttribute="top" secondItem="cT7-xD-U9U" secondAttribute="top" constant="6" id="CFW-7x-QnG"/>
