@@ -12,9 +12,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var synopsis: UILabel!
-    @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var moviePoster: UIImageView!
+    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var synopsis: UILabel!
     
 
     @IBAction func nextMovie(_ sender: UIButton) {
@@ -41,8 +41,8 @@ class ViewController: UIViewController {
         print(dict)
         DispatchQueue.main.async {
             self.movieTitle.text = dict.value(forKey: "title") as! String?
-            self.synopsis.text = dict.value(forKey: "overview") as! String?
-            self.releaseDate.text = dict.value(forKey: "release_date") as! String?
+            //self.synopsis.text = dict.value(forKey: "overview") as! String?
+            //self.releaseDate.text = dict.value(forKey: "release_date") as! String?
             //TODO: set all other information here
         }
 
