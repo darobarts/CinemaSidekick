@@ -14,6 +14,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      let moviePicker = MovieGetter()
+      moviePicker.getMovie(movieId: "1")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
