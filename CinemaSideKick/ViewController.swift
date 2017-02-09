@@ -41,8 +41,8 @@ class ViewController: UIViewController {
         print(dict)
         DispatchQueue.main.async {
             self.movieTitle.text = dict.value(forKey: "title") as! String?
-            //self.synopsis.text = dict.value(forKey: "overview") as! String?
-            //self.releaseDate.text = dict.value(forKey: "release_date") as! String?
+            self.synopsis.text = dict.value(forKey: "overview") as! String?
+            self.releaseDate.text = dict.value(forKey: "release_date") as! String?
             //TODO: set all other information here
         }
 
