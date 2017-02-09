@@ -13,6 +13,7 @@
 		84ACF6141E4BFEE300B7E390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84ACF6131E4BFEE300B7E390 /* Assets.xcassets */; };
 		84ACF6171E4BFEE300B7E390 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ACF6151E4BFEE300B7E390 /* LaunchScreen.storyboard */; };
 		84ACF6221E4BFEE300B7E390 /* CinemaSideKickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF6211E4BFEE300B7E390 /* CinemaSideKickTests.swift */; };
+		84ACF62D1E4C031500B7E390 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF62C1E4C031500B7E390 /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		84ACF61D1E4BFEE300B7E390 /* CinemaSideKickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemaSideKickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ACF6211E4BFEE300B7E390 /* CinemaSideKickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaSideKickTests.swift; sourceTree = "<group>"; };
 		84ACF6231E4BFEE300B7E390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84ACF62C1E4C031500B7E390 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */,
 				84ACF60E1E4BFEE300B7E390 /* ViewController.swift */,
+				84ACF62C1E4C031500B7E390 /* RatingControl.swift */,
 				84ACF6101E4BFEE300B7E390 /* Main.storyboard */,
 				84ACF6131E4BFEE300B7E390 /* Assets.xcassets */,
 				84ACF6151E4BFEE300B7E390 /* LaunchScreen.storyboard */,
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ACF60F1E4BFEE300B7E390 /* ViewController.swift in Sources */,
+				84ACF62D1E4C031500B7E390 /* RatingControl.swift in Sources */,
 				84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
