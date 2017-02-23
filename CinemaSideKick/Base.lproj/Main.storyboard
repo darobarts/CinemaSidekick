@@ -213,6 +213,7 @@
                             <outletCollection property="gestureRecognizers" destination="pLz-QV-tcc" appends="YES" id="OYl-1f-7Gc"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="nMI-LN-dK7"/>
                     <connections>
                         <outlet property="moviePoster" destination="ajF-Co-O2y" id="FqD-Qc-aBE"/>
                         <outlet property="movieTitle" destination="yHR-gS-Rwp" id="QP4-xM-iDW"/>

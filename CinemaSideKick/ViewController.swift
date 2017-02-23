@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        
+
+        
         let movieGetter = MovieGetter()
         movieGetter.getMovie(movieId: "3", completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
     }
