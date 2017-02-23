@@ -118,6 +118,7 @@
 				84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */,
 				84ACF60E1E4BFEE300B7E390 /* ViewController.swift */,
 				84ACF62C1E4C031500B7E390 /* RatingControl.swift */,
+				00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */,
 				84ACF6101E4BFEE300B7E390 /* Main.storyboard */,
 				84ACF6131E4BFEE300B7E390 /* Assets.xcassets */,
 				84ACF6151E4BFEE300B7E390 /* LaunchScreen.storyboard */,

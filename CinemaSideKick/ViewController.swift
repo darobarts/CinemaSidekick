@@ -16,9 +16,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var synopsis: UILabel!
     
+    
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        
+
+        
+        let movieGetter = MovieGetter()
+        movieGetter.getMovie(movieId: "3", completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+    }
+    
 
     @IBAction func nextMovie(_ sender: UIButton) {
-        movieTitle.text = "Default"
         let movieGetter = MovieGetter()
         movieGetter.getMovie(movieId: "3", completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
         
