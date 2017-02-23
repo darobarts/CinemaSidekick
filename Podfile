@@ -7,6 +7,7 @@ target 'CinemaSideKick' do
 
   # Pods for CinemaSideKick
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
   target 'CinemaSideKickTests' do
     inherit! :search_paths

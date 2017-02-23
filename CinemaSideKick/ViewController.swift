@@ -22,13 +22,13 @@ class ViewController: UIViewController {
 
         
         let movieGetter = MovieGetter()
-        movieGetter.getMovie(movieId: "3", completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
     }
     
 
     @IBAction func nextMovie(_ sender: UIButton) {
         let movieGetter = MovieGetter()
-        movieGetter.getMovie(movieId: "3", completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
         
     }
     override func viewDidLoad() {
@@ -39,19 +39,25 @@ class ViewController: UIViewController {
     func setMovieInfo(dict : NSDictionary) {
         print("Setting movie info")
         let movieGetter = MovieGetter()
-        let posterPath = dict.value(forKey: "poster_path") as! String?
-        movieGetter.getConfiguration(completion: {(json : NSDictionary)->()
-            in movieGetter.getPoster(posterPath: movieGetter.getPosterPath(dict: json, poster_name: posterPath!) ,completion: {(data : Data)->()
+
+        //get poster
+        movieGetter.getPoster(posterPath: dict.value(forKey :"poster_path") as! String, completion: {(data : Data)->()
                 in DispatchQueue.main.async {
                     self.moviePoster.image = UIImage(data : data) }
-                })})
+                })
         
-        print(dict)
         DispatchQueue.main.async {
             self.movieTitle.text = dict.value(forKey: "title") as! String?
             self.synopsis.text = dict.value(forKey: "overview") as! String?
             self.releaseDate.text = dict.value(forKey: "release_date") as! String?
             //TODO: set all other information here
+            //set director
+            
+            //set rating
+            
+            //set genre
+            
+            //set actors
         }
 
 
