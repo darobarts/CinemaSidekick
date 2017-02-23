@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00134BCD1E5E6454006ED242 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00134BCC1E5E6454006ED242 /* GoogleService-Info.plist */; };
+		008698641E5E6ED10047B8BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008698631E5E6ED10047B8BB /* GoogleService-Info.plist */; };
 		00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */; };
 		719C9CB5A73E4CD1501FF42E /* Pods_CinemaSideKick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD185E60ADA94704B50E4AA4 /* Pods_CinemaSideKick.framework */; };
 		84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */; };
@@ -31,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00134BCC1E5E6454006ED242 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		008698631E5E6ED10047B8BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieGetter.swift; sourceTree = "<group>"; };
 		5A7DDD6E6D8D21D0C5EA4676 /* Pods-CinemaSideKickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSideKickTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinemaSideKickTests/Pods-CinemaSideKickTests.release.xcconfig"; sourceTree = "<group>"; };
 		66D8C3241CF5C5B2337C79F4 /* Pods-CinemaSideKick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSideKick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinemaSideKick/Pods-CinemaSideKick.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,13 +118,12 @@
 				84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */,
 				84ACF60E1E4BFEE300B7E390 /* ViewController.swift */,
 				84ACF62C1E4C031500B7E390 /* RatingControl.swift */,
-				00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */,
 				84ACF6101E4BFEE300B7E390 /* Main.storyboard */,
 				84ACF6131E4BFEE300B7E390 /* Assets.xcassets */,
 				84ACF6151E4BFEE300B7E390 /* LaunchScreen.storyboard */,
 				84ACF6181E4BFEE300B7E390 /* Info.plist */,
 				00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */,
-				00134BCC1E5E6454006ED242 /* GoogleService-Info.plist */,
+				008698631E5E6ED10047B8BB /* GoogleService-Info.plist */,
 			);
 			path = CinemaSideKick;
 			sourceTree = "<group>";
@@ -227,7 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ACF6171E4BFEE300B7E390 /* LaunchScreen.storyboard in Resources */,
-				00134BCD1E5E6454006ED242 /* GoogleService-Info.plist in Resources */,
+				008698641E5E6ED10047B8BB /* GoogleService-Info.plist in Resources */,
 				84ACF6141E4BFEE300B7E390 /* Assets.xcassets in Resources */,
 				84ACF6121E4BFEE300B7E390 /* Main.storyboard in Resources */,
 			);
