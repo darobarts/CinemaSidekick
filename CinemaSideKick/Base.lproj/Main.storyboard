@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -96,16 +96,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3DQ-Pq-sOW" userLabel="Genre Stack">
-                                                <rect key="frame" x="0.0" y="97" width="350" height="21"/>
+                                                <rect key="frame" x="0.0" y="96" width="350" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Genre:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5E-u5-MWe">
-                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sci/Fi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGp-dY-N8g">
-                                                        <rect key="frame" x="175" y="0.0" width="175" height="21"/>
+                                                        <rect key="frame" x="175" y="0.0" width="175" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="175" id="VyP-86-Nen"/>
                                                         </constraints>
@@ -116,16 +116,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-fQ-d6d" userLabel="Actor Stack">
-                                                <rect key="frame" x="0.0" y="123" width="350" height="58"/>
+                                                <rect key="frame" x="0.0" y="121.5" width="350" height="57.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actors:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kj-vT-36N">
-                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eg-7D-7q3">
-                                                        <rect key="frame" x="175" y="0.0" width="175" height="58"/>
+                                                        <rect key="frame" x="175" y="0.0" width="175" height="57.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="143.5" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9AU-ES-axV" userLabel="Plot Stack">
-                                                <rect key="frame" x="0.0" y="186" width="350" height="144"/>
+                                                <rect key="frame" x="0.0" y="184" width="350" height="143.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="175" placeholderIntrinsicHeight="20.5" text="Synopsis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2h-4A-LZL">
                                                         <rect key="frame" x="0.0" y="0.0" width="175" height="21"/>
@@ -242,10 +242,14 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="actors" destination="5eg-7D-7q3" id="MY0-S8-dGF"/>
+                        <outlet property="director" destination="iPZ-4j-qy9" id="bdP-bI-v1u"/>
+                        <outlet property="genres" destination="gGp-dY-N8g" id="qPh-g0-Wpo"/>
                         <outlet property="moviePoster" destination="ajF-Co-O2y" id="FqD-Qc-aBE"/>
                         <outlet property="movieTitle" destination="yHR-gS-Rwp" id="QP4-xM-iDW"/>
                         <outlet property="ratingControl" destination="QdZ-xY-e6H" id="mpR-1N-9sC"/>
                         <outlet property="releaseDate" destination="e6a-VW-f4b" id="13X-J5-Mnk"/>
+                        <outlet property="runTime" destination="DyY-A2-Dgt" id="jTa-fk-ALw"/>
                         <outlet property="synopsis" destination="zlg-i3-epa" id="A5Q-YJ-v6w"/>
                     </connections>
                 </viewController>

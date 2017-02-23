@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var moviePoster: UIImageView!
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var synopsis: UILabel!
+    @IBOutlet weak var runTime: UILabel!
+    @IBOutlet weak var director: UILabel!
+    @IBOutlet weak var genres: UILabel!
+    @IBOutlet weak var actors: UILabel!
     
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
@@ -50,14 +54,27 @@ class ViewController: UIViewController {
             self.movieTitle.text = dict.value(forKey: "title") as! String?
             self.synopsis.text = dict.value(forKey: "overview") as! String?
             self.releaseDate.text = dict.value(forKey: "release_date") as! String?
-            //TODO: set all other information here
+
             //set director
-            
+            self.director.text = dict.value(forKey: "director") as! String?
             //set rating
             
             //set genre
+            var genreString = ""
+            for (genre, _) in dict.value(forKey: "genres") as! NSDictionary {
+                genreString += String(describing: genre) + ","
+            }
+            self.genres.text = genreString.trimmingCharacters(in: CharacterSet.punctuationCharacters)
             
             //set actors
+            var actorString = ""
+            for (actor, _) in dict.value(forKey: "actors") as! NSDictionary {
+                actorString += String(describing: actor) + ","
+            }
+            self.actors.text = actorString.trimmingCharacters(in: CharacterSet.punctuationCharacters)
+            
+            //set runTime
+            self.runTime.text = String(dict.value(forKey: "runtime") as! Int) + " m"
         }
 
 
