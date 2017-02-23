@@ -26,7 +26,7 @@
                                 <rect key="frame" x="9" y="372" width="350" height="287"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pOW-ik-aYa" userLabel="Info Stack">
-                                        <rect key="frame" x="0.0" y="6" width="350" height="330"/>
+                                        <rect key="frame" x="0.0" y="6" width="350" height="373.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hVI-bq-oma" userLabel="UserRating Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
@@ -76,16 +76,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYK-hm-Wp2" userLabel="Release Stack">
-                                                <rect key="frame" x="0.0" y="71" width="350" height="21"/>
+                                                <rect key="frame" x="0.0" y="71" width="350" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Release Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf2-97-msk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="20"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="March 31, 1999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6a-VW-f4b">
-                                                        <rect key="frame" x="175" y="0.0" width="175" height="21"/>
+                                                        <rect key="frame" x="175" y="0.0" width="175" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="175" id="cY1-7H-5Wy"/>
                                                         </constraints>
@@ -140,12 +140,15 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="175" placeholderIntrinsicHeight="20.5" text="Synopsis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2h-4A-LZL">
                                                         <rect key="frame" x="0.0" y="0.0" width="175" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="QhI-AC-Qme"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlg-i3-epa">
-                                                        <rect key="frame" x="175" y="0.0" width="175" height="144"/>
+                                                        <rect key="frame" x="175" y="0.0" width="175" height="107.5"/>
                                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                                         <string key="text">A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
