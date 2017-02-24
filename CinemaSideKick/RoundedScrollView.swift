@@ -17,5 +17,6 @@ class RoundedScrollView: UIScrollView {
         //layer.cornerRadius = self.frame.height / 2.0
         layer.masksToBounds = true
         
+        
     }
 }
