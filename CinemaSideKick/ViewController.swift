@@ -53,7 +53,10 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             self.movieTitle.text = dict.value(forKey: "title") as! String?
             self.synopsis.text = dict.value(forKey: "overview") as! String?
-            self.releaseDate.text = dict.value(forKey: "release_date") as! String?
+            
+            //get and reformat the release date
+            self.releaseDate.text = self.formatReleaseDate(date: dict.value(forKey: "release_date") as! String)
+            //dict.value(forKey: "release_date") as! String?
 
             //set director
             self.director.text = dict.value(forKey: "director") as! String?
@@ -78,6 +81,46 @@ class ViewController: UIViewController {
         }
 
 
+    }
+    
+    // make the release date this format: MonthName, DD, YYYY
+    func formatReleaseDate(date: String) -> String {
+        
+        let sentence = date
+        
+        let year =  sentence[sentence.index(sentence.startIndex,
+                                offsetBy: 0)...sentence.index(sentence.startIndex,
+                                offsetBy: 3)]
+        
+        let month = sentence[sentence.index(sentence.startIndex,
+                                           offsetBy: 5)...sentence.index(sentence.startIndex,
+                                           offsetBy: 6)]
+        
+        let day = sentence[sentence.index(sentence.startIndex,
+                                            offsetBy: 8)...sentence.index(sentence.startIndex,
+                                            offsetBy: 9)]
+        
+        //print(translateMonth(num: month) + " " + day + " " + year)
+        return translateMonth(num: month) + " " + day + ", " + year
+        
+    }
+    
+    //translate number date to string
+    func translateMonth(num: String) -> String {
+        if(num == "01"){return "January"}
+        if(num == "02"){return "February"}
+        if(num == "03"){return "March"}
+        if(num == "04"){return "April"}
+        if(num == "05"){return "May"}
+        if(num == "06"){return "June"}
+        if(num == "07"){return "July"}
+        if(num == "08"){return "August"}
+        if(num == "09"){return "September"}
+        if(num == "10"){return "October"}
+        if(num == "11"){return "November"}
+        if(num == "12"){return "December"}
+        
+        return "##"
     }
 
 
