@@ -22,6 +22,31 @@ class RoundedScrollView: UIScrollView {
     
     var gradientLayer: CAGradientLayer { return layer as! CAGradientLayer }
     
+    //create option to set a boarder around scroll view
+    @IBInspectable var borderWidth: CGFloat = 0.0{
+        
+        didSet{
+            
+            self.layer.borderWidth = borderWidth
+        }
+    }
+    
+    //create an option to set a color for the boarder
+    @IBInspectable var borderColor: UIColor = UIColor.clear {
+        
+        didSet {
+            
+            self.layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    //send these options to the interface builder gui
+    override func prepareForInterfaceBuilder() {
+        
+        super.prepareForInterfaceBuilder()
+    }
+    
+    
     func updatePoints() {
         if horizontalMode {
             gradientLayer.startPoint = diagonalMode ? CGPoint(x: 1, y: 0) : CGPoint(x: 0, y: 0.5)
