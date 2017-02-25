@@ -1,15 +1,15 @@
 //
-//  RoundedScrollView.swift
+//  GradientView.swift
 //  CinemaSideKick
 //
-//  Created by Santi Angelo Pierini on 2/23/17.
+//  Created by Santi Angelo Pierini on 2/24/17.
 //
 //
 
 import Foundation
 
 @IBDesignable
-class RoundedScrollView: UIScrollView {
+class GradientView: UIView {
     
     @IBInspectable var startColor:   UIColor = .black { didSet { updateColors() }}
     @IBInspectable var endColor:     UIColor = .white { didSet { updateColors() }}
@@ -43,16 +43,5 @@ class RoundedScrollView: UIScrollView {
         updatePoints()
         updateLocations()
         updateColors()
-    }
-    
-    //function that trims the edges of the scrollview to giveit a rounded look
-    override func awakeFromNib() {
-        
-        self.layoutIfNeeded()
-        layer.cornerRadius = 10
-        //layer.cornerRadius = self.frame.height / 2.0
-        layer.masksToBounds = true
-        
-        
     }
 }

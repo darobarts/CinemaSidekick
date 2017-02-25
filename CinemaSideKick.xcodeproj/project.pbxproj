@@ -11,6 +11,7 @@
 		00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */; };
 		719C9CB5A73E4CD1501FF42E /* Pods_CinemaSideKick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD185E60ADA94704B50E4AA4 /* Pods_CinemaSideKick.framework */; };
 		841537341E5FBFE9006623C0 /* RoundedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841537331E5FBFE9006623C0 /* RoundedScrollView.swift */; };
+		841ED3301E6108C700B0E70F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ED32F1E6108C700B0E70F /* GradientView.swift */; };
 		847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C037D1E5EA11A00D9A82C /* SWRevealViewController.m */; };
 		84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */; };
 		84ACF60F1E4BFEE300B7E390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF60E1E4BFEE300B7E390 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		5A7DDD6E6D8D21D0C5EA4676 /* Pods-CinemaSideKickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSideKickTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinemaSideKickTests/Pods-CinemaSideKickTests.release.xcconfig"; sourceTree = "<group>"; };
 		66D8C3241CF5C5B2337C79F4 /* Pods-CinemaSideKick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSideKick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinemaSideKick/Pods-CinemaSideKick.debug.xcconfig"; sourceTree = "<group>"; };
 		841537331E5FBFE9006623C0 /* RoundedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedScrollView.swift; sourceTree = "<group>"; };
+		841ED32F1E6108C700B0E70F /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		847C03781E5E8C4500D9A82C /* CinemaSideKick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CinemaSideKick-Bridging-Header.h"; sourceTree = "<group>"; };
 		847C037C1E5EA11A00D9A82C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		847C037D1E5EA11A00D9A82C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				84ACF60E1E4BFEE300B7E390 /* ViewController.swift */,
 				84ACF62C1E4C031500B7E390 /* RatingControl.swift */,
 				84ACF6101E4BFEE300B7E390 /* Main.storyboard */,
+				841ED32F1E6108C700B0E70F /* GradientView.swift */,
 				841537331E5FBFE9006623C0 /* RoundedScrollView.swift */,
 				84ACF6131E4BFEE300B7E390 /* Assets.xcassets */,
 				84ACF6151E4BFEE300B7E390 /* LaunchScreen.storyboard */,
@@ -362,6 +365,7 @@
 				84ACF62D1E4C031500B7E390 /* RatingControl.swift in Sources */,
 				84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */,
 				00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */,
+				841ED3301E6108C700B0E70F /* GradientView.swift in Sources */,
 				847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */,
 				841537341E5FBFE9006623C0 /* RoundedScrollView.swift in Sources */,
 			);
