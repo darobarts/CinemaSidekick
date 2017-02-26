@@ -253,6 +253,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="RoundedScroller" destination="cT7-xD-U9U" id="g1L-jt-Dlv"/>
                         <outlet property="actors" destination="5eg-7D-7q3" id="MY0-S8-dGF"/>
                         <outlet property="director" destination="iPZ-4j-qy9" id="bdP-bI-v1u"/>
                         <outlet property="genres" destination="gGp-dY-N8g" id="qPh-g0-Wpo"/>

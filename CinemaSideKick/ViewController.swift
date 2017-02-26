@@ -19,11 +19,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var director: UILabel!
     @IBOutlet weak var genres: UILabel!
     @IBOutlet weak var actors: UILabel!
+    @IBOutlet weak var RoundedScroller: RoundedScrollView!
     
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         
-
+        //reset scroll box to the top after swiping
+        RoundedScroller.setContentOffset(CGPoint(x: 1, y: 1), animated: true)
         
         let movieGetter = MovieGetter()
         movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
