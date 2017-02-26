@@ -100,7 +100,6 @@ class ViewController: UIViewController {
                                             offsetBy: 8)...sentence.index(sentence.startIndex,
                                             offsetBy: 9)]
         
-        //print(translateMonth(num: month) + " " + day + " " + year)
         return translateMonth(num: month) + " " + day + ", " + year
         
     }
