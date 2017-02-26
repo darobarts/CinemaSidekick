@@ -13,6 +13,7 @@
 		841537341E5FBFE9006623C0 /* RoundedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841537331E5FBFE9006623C0 /* RoundedScrollView.swift */; };
 		841ED3301E6108C700B0E70F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ED32F1E6108C700B0E70F /* GradientView.swift */; };
 		847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C037D1E5EA11A00D9A82C /* SWRevealViewController.m */; };
+		8493CB311E6378C90034611A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493CB301E6378C90034611A /* LoginViewController.swift */; };
 		84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */; };
 		84ACF60F1E4BFEE300B7E390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF60E1E4BFEE300B7E390 /* ViewController.swift */; };
 		84ACF6121E4BFEE300B7E390 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ACF6101E4BFEE300B7E390 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		847C03781E5E8C4500D9A82C /* CinemaSideKick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CinemaSideKick-Bridging-Header.h"; sourceTree = "<group>"; };
 		847C037C1E5EA11A00D9A82C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		847C037D1E5EA11A00D9A82C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		8493CB301E6378C90034611A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84ACF6091E4BFEE300B7E390 /* CinemaSideKick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemaSideKick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84ACF60E1E4BFEE300B7E390 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,14 +138,15 @@
 			children = (
 				84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */,
 				84ACF60E1E4BFEE300B7E390 /* ViewController.swift */,
+				8493CB301E6378C90034611A /* LoginViewController.swift */,
 				84ACF62C1E4C031500B7E390 /* RatingControl.swift */,
-				84ACF6101E4BFEE300B7E390 /* Main.storyboard */,
 				841ED32F1E6108C700B0E70F /* GradientView.swift */,
 				841537331E5FBFE9006623C0 /* RoundedScrollView.swift */,
+				00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */,
+				84ACF6101E4BFEE300B7E390 /* Main.storyboard */,
 				84ACF6131E4BFEE300B7E390 /* Assets.xcassets */,
 				84ACF6151E4BFEE300B7E390 /* LaunchScreen.storyboard */,
 				84ACF6181E4BFEE300B7E390 /* Info.plist */,
-				00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */,
 				008698631E5E6ED10047B8BB /* GoogleService-Info.plist */,
 			);
 			path = CinemaSideKick;
@@ -365,6 +368,7 @@
 				84ACF62D1E4C031500B7E390 /* RatingControl.swift in Sources */,
 				84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */,
 				00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */,
+				8493CB311E6378C90034611A /* LoginViewController.swift in Sources */,
 				841ED3301E6108C700B0E70F /* GradientView.swift in Sources */,
 				847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */,
 				841537341E5FBFE9006623C0 /* RoundedScrollView.swift in Sources */,

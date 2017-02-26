@@ -80,6 +80,7 @@ class ViewController: UIViewController {
             
             //set runTime
             self.runTime.text = String(dict.value(forKey: "runtime") as! Int) + " m"
+            
         }
 
 
