@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		008698641E5E6ED10047B8BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008698631E5E6ED10047B8BB /* GoogleService-Info.plist */; };
+		00E957D11E679C3B003EDFFA /* FirebaseUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */; };
+		00E957D31E679CA2003EDFFA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E957D21E679CA2003EDFFA /* User.swift */; };
 		00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */; };
-		719C9CB5A73E4CD1501FF42E /* Pods_CinemaSideKick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD185E60ADA94704B50E4AA4 /* Pods_CinemaSideKick.framework */; };
+		719C9CB5A73E4CD1501FF42E /* Pods_CinemaSideKick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD185E60ADA94704B50E4AA4 /* Pods_CinemaSideKick.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		841537341E5FBFE9006623C0 /* RoundedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841537331E5FBFE9006623C0 /* RoundedScrollView.swift */; };
 		841ED3301E6108C700B0E70F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ED32F1E6108C700B0E70F /* GradientView.swift */; };
 		847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C037D1E5EA11A00D9A82C /* SWRevealViewController.m */; };
@@ -36,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		008698631E5E6ED10047B8BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		00B227BA1E6808D4000408D1 /* CinemaSideKick.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CinemaSideKick.entitlements; sourceTree = "<group>"; };
+		00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUploader.swift; sourceTree = "<group>"; };
+		00E957D21E679CA2003EDFFA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieGetter.swift; sourceTree = "<group>"; };
 		5A7DDD6E6D8D21D0C5EA4676 /* Pods-CinemaSideKickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSideKickTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinemaSideKickTests/Pods-CinemaSideKickTests.release.xcconfig"; sourceTree = "<group>"; };
 		66D8C3241CF5C5B2337C79F4 /* Pods-CinemaSideKick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSideKick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinemaSideKick/Pods-CinemaSideKick.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +141,7 @@
 		84ACF60B1E4BFEE300B7E390 /* CinemaSideKick */ = {
 			isa = PBXGroup;
 			children = (
+				00B227BA1E6808D4000408D1 /* CinemaSideKick.entitlements */,
 				84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */,
 				84ACF60E1E4BFEE300B7E390 /* ViewController.swift */,
 				8493CB301E6378C90034611A /* LoginViewController.swift */,
@@ -143,7 +149,9 @@
 				841ED32F1E6108C700B0E70F /* GradientView.swift */,
 				841537331E5FBFE9006623C0 /* RoundedScrollView.swift */,
 				00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */,
+				00E957D21E679CA2003EDFFA /* User.swift */,
 				84ACF6101E4BFEE300B7E390 /* Main.storyboard */,
+				00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */,
 				84ACF6131E4BFEE300B7E390 /* Assets.xcassets */,
 				84ACF6151E4BFEE300B7E390 /* LaunchScreen.storyboard */,
 				84ACF6181E4BFEE300B7E390 /* Info.plist */,
@@ -216,8 +224,14 @@
 				TargetAttributes = {
 					84ACF6081E4BFEE200B7E390 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 44AJQ7CB2A;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					84ACF61C1E4BFEE300B7E390 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -370,7 +384,9 @@
 				00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */,
 				8493CB311E6378C90034611A /* LoginViewController.swift in Sources */,
 				841ED3301E6108C700B0E70F /* GradientView.swift in Sources */,
+				00E957D11E679C3B003EDFFA /* FirebaseUploader.swift in Sources */,
 				847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */,
+				00E957D31E679CA2003EDFFA /* User.swift in Sources */,
 				841537341E5FBFE9006623C0 /* RoundedScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +526,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CinemaSideKick/CinemaSideKick.entitlements;
+				DEVELOPMENT_TEAM = 44AJQ7CB2A;
 				INFOPLIST_FILE = CinemaSideKick/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CinemaSideKick.CinemaSideKick;
@@ -526,6 +544,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CinemaSideKick/CinemaSideKick.entitlements;
+				DEVELOPMENT_TEAM = 44AJQ7CB2A;
 				INFOPLIST_FILE = CinemaSideKick/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CinemaSideKick.CinemaSideKick;

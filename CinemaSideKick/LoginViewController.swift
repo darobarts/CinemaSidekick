@@ -8,40 +8,58 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
+import FacebookLogin
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
-    
-    @IBOutlet weak var userLogin: UITextField!
-    @IBOutlet weak var passwordLogin: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+class LoginViewController: UIViewController, LoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-        self.userLogin.delegate = self
-        self.passwordLogin.delegate = self
-
-    }
-    
-    //called when the "done" button is clicked for username field
-    @IBAction func usernameDone(_ sender: Any) {
-        self.view.endEditing(true)
+        // Set up facebook login button
+        let loginButton = LoginButton(readPermissions: [.publicProfile, .email])
+        loginButton.center = view.center
         
-        print("Username field: " + userLogin.text!)
+        loginButton.delegate = self
+        
+        view.addSubview(loginButton)
 
     }
     
-    //called when the "done" button is clicked for password field
-    @IBAction func passwordDone(_ sender: Any) {
-        self.view.endEditing(true)
-        print("Password field: " + passwordLogin.text!)
-
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        switch result {
+        case .cancelled:
+            print("Login cancelled")
+            break
+        case .success( _, _, let token):
+            let credential = FIRFacebookAuthProvider.credential(withAccessToken: token.authenticationToken)
+            FIRAuth.auth()?.signIn(with: credential) {(user, error) in
+                //if there is an error
+                if error != nil {
+                    print("There was an error: " + (error?.localizedDescription)!)
+                    return
+                }
+                //upload user to Firebase
+                if user != nil {
+                    let uploader = FirebaseUploader()
+                    uploader.addUser(user: User(id: (user?.uid)!, name: (user?.displayName)!))
+                    //move displays to next View
+                    let movieView = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController
+                    self.navigationController?.pushViewController(movieView!, animated: true)
+                }
+                
+            }
+            break
+        case .failed(let error):
+            print("Login Failed: " + error.localizedDescription)
+            break
+            
+        }
+        //call firebase with access token
+        
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        //deal with facebook logout
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        userLogin.resignFirstResponder()
-        passwordLogin.resignFirstResponder()
-        return true;
-    }
 }

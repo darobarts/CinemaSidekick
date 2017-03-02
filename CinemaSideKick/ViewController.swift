@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
     
@@ -20,7 +21,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var genres: UILabel!
     @IBOutlet weak var actors: UILabel!
     @IBOutlet weak var RoundedScroller: RoundedScrollView!
+    var movieId: Int? = nil
     
+    @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        let uploader = FirebaseUploader()
+        let auth = FIRAuth.auth()
+        let userId = auth?.currentUser?.uid
+        uploader.addMovieToUserWishlist(userId: userId!, movieId: String(describing: movieId))
+    }
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         
@@ -39,13 +47,18 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let movieGetter = MovieGetter()
+        movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
     }
 
     func setMovieInfo(dict : NSDictionary) {
         print("Setting movie info")
         let movieGetter = MovieGetter()
-
+        let id = dict.value(forKey: "tmdb_id")
+        if id != nil {
+            self.movieId = id as! Int
+        }
+ 
         //get poster
         movieGetter.getPoster(posterPath: dict.value(forKey :"poster_path") as! String, completion: {(data : Data)->()
                 in DispatchQueue.main.async {
