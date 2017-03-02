@@ -1,29 +1,17 @@
 //
-//  LoginViewController.swift
+//  FacebookLoginDelegate.swift
 //  CinemaSideKick
 //
-//  Created by Santi Angelo Pierini on 2/26/17.
+//  Created by Austin Robarts on 3/2/17.
 //
 //
 
 import Foundation
-import UIKit
-import FirebaseAuth
 import FacebookLogin
+import FacebookCore
+import FirebaseAuth
 
-class LoginViewController: UIViewController, LoginButtonDelegate {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Set up facebook login button
-        let loginButton = LoginButton(readPermissions: [.publicProfile, .email])
-        loginButton.center = view.center
-        
-        loginButton.delegate = self
-        
-        view.addSubview(loginButton)
-
-    }
+class FacebookLoginDelegate : LoginButtonDelegate {
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         switch result {
@@ -43,8 +31,6 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                     let uploader = FirebaseUploader()
                     uploader.addUser(user: User(id: (user?.uid)!, name: (user?.displayName)!))
                     //move displays to next View
-                    let movieView = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController
-                    self.navigationController?.pushViewController(movieView!, animated: true)
                 }
                 
             }
@@ -56,10 +42,10 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         }
         //call firebase with access token
         
-    }
+     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         //deal with facebook logout
     }
-
+    
 }

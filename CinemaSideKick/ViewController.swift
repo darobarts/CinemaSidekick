@@ -39,7 +39,8 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let movieGetter = MovieGetter()
+        movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
     }
 
     func setMovieInfo(dict : NSDictionary) {
