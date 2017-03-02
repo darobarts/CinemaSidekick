@@ -11,7 +11,6 @@ import UIKit
 import FirebaseAuth
 import FacebookLogin
 
-@IBDesignable
 class LoginViewController: UIViewController, LoginButtonDelegate {
     
     
