@@ -20,15 +20,19 @@ class FirebaseUploader {
 
     }
     
-    
     func addMovieToUserWishlist(userId : String, movieId : String) {
-        ref = FIRDatabase.database().reference()
-        ref.child("users").child(userId).setValue(1, forUndefinedKey: movieId)
+        addMovieToList(userId: userId, movieId: movieId, listName: "wishList")
     }
     
     func addMovieToUserSeenList(userId : String, movieId : String) {
-        ref = FIRDatabase.database().reference()
-        ref.child("users").child(userId).setValue(1, forUndefinedKey: movieId)
+        addMovieToList(userId: userId, movieId: movieId, listName: "seenList")
+    }
+    
+    private func addMovieToList(userId : String!, movieId : String!, listName : String) {
+        if (userId != nil && movieId != nil) {
+            ref = FIRDatabase.database().reference()
+            ref.child("users").child(userId!).child(listName).child(String(movieId)).setValue(1)
+        }
     }
     
     

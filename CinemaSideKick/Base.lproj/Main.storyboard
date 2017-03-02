@@ -263,6 +263,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DefaultMatrix" translatesAutoresizingMaskIntoConstraints="NO" id="ajF-Co-O2y">
                                 <rect key="frame" x="77" y="113" width="220" height="209"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.23770908323036233" green="0.23770908323036233" blue="0.23770908323036233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -283,6 +284,7 @@
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="pLz-QV-tcc" appends="YES" id="OYl-1f-7Gc"/>
+                            <outletCollection property="gestureRecognizers" destination="Tis-bp-Bkb" appends="YES" id="xcq-R1-bWg"/>
                         </connections>
                     </view>
                     <connections>
@@ -299,9 +301,15 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="cKF-HI-RWD"/>
                 <swipeGestureRecognizer direction="right" id="pLz-QV-tcc" userLabel="SwipeToRightRecognizer">
                     <connections>
                         <action selector="swipeRight:" destination="BYZ-38-t0r" id="gSf-0W-kWr"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="Tis-bp-Bkb" userLabel="SwipeUpRecognizer">
+                    <connections>
+                        <action selector="swipeUp:" destination="BYZ-38-t0r" id="fTZ-dy-GHD"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
