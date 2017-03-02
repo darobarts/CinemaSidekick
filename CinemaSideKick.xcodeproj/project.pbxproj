@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		008698641E5E6ED10047B8BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008698631E5E6ED10047B8BB /* GoogleService-Info.plist */; };
-		00B227BC1E680A2F000408D1 /* FacebookLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B227BB1E680A2F000408D1 /* FacebookLoginDelegate.swift */; };
 		00E957D11E679C3B003EDFFA /* FirebaseUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */; };
 		00E957D31E679CA2003EDFFA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E957D21E679CA2003EDFFA /* User.swift */; };
 		00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		008698631E5E6ED10047B8BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00B227BA1E6808D4000408D1 /* CinemaSideKick.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CinemaSideKick.entitlements; sourceTree = "<group>"; };
-		00B227BB1E680A2F000408D1 /* FacebookLoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginDelegate.swift; sourceTree = "<group>"; };
 		00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUploader.swift; sourceTree = "<group>"; };
 		00E957D21E679CA2003EDFFA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieGetter.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */,
 				84ACF60E1E4BFEE300B7E390 /* ViewController.swift */,
 				8493CB301E6378C90034611A /* LoginViewController.swift */,
-				00B227BB1E680A2F000408D1 /* FacebookLoginDelegate.swift */,
 				84ACF62C1E4C031500B7E390 /* RatingControl.swift */,
 				841ED32F1E6108C700B0E70F /* GradientView.swift */,
 				841537331E5FBFE9006623C0 /* RoundedScrollView.swift */,
@@ -381,7 +378,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00B227BC1E680A2F000408D1 /* FacebookLoginDelegate.swift in Sources */,
 				84ACF60F1E4BFEE300B7E390 /* ViewController.swift in Sources */,
 				84ACF62D1E4C031500B7E390 /* RatingControl.swift in Sources */,
 				84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */,
