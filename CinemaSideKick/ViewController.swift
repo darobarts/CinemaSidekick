@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var genres: UILabel!
     @IBOutlet weak var actors: UILabel!
     @IBOutlet weak var RoundedScroller: RoundedScrollView!
+    @IBOutlet weak var movieRating: UILabel!
     var movieId: Int? = nil
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
@@ -93,6 +94,10 @@ class ViewController: UIViewController {
             
             //set runTime
             self.runTime.text = String(dict.value(forKey: "runtime") as! Int) + " m"
+            
+            //set rating
+            self.movieRating.text =  String(Int(20*(dict.value(forKey: "rating") as! Double))) + "%"
+            
             
         }
 

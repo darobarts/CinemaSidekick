@@ -293,6 +293,7 @@
                         <outlet property="director" destination="iPZ-4j-qy9" id="bdP-bI-v1u"/>
                         <outlet property="genres" destination="gGp-dY-N8g" id="qPh-g0-Wpo"/>
                         <outlet property="moviePoster" destination="ajF-Co-O2y" id="FqD-Qc-aBE"/>
+                        <outlet property="movieRating" destination="uKL-zS-Pwc" id="6sW-Ze-jpe"/>
                         <outlet property="movieTitle" destination="yHR-gS-Rwp" id="QP4-xM-iDW"/>
                         <outlet property="ratingControl" destination="QdZ-xY-e6H" id="mpR-1N-9sC"/>
                         <outlet property="releaseDate" destination="e6a-VW-f4b" id="13X-J5-Mnk"/>
