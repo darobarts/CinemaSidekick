@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004E900E1E7AA45400061EB4 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004E900D1E7AA45400061EB4 /* MovieTableViewCell.swift */; };
+		004E90161E7AA90800061EB4 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004E90151E7AA90800061EB4 /* WishListViewController.swift */; };
 		008698641E5E6ED10047B8BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008698631E5E6ED10047B8BB /* GoogleService-Info.plist */; };
 		00E957D11E679C3B003EDFFA /* FirebaseUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */; };
 		00E957D31E679CA2003EDFFA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E957D21E679CA2003EDFFA /* User.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		004E900D1E7AA45400061EB4 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		004E90151E7AA90800061EB4 /* WishListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		008698631E5E6ED10047B8BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00B227BA1E6808D4000408D1 /* CinemaSideKick.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CinemaSideKick.entitlements; sourceTree = "<group>"; };
 		00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUploader.swift; sourceTree = "<group>"; };
@@ -144,14 +148,16 @@
 				00B227BA1E6808D4000408D1 /* CinemaSideKick.entitlements */,
 				84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */,
 				84ACF60E1E4BFEE300B7E390 /* ViewController.swift */,
+				00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */,
 				8493CB301E6378C90034611A /* LoginViewController.swift */,
 				84ACF62C1E4C031500B7E390 /* RatingControl.swift */,
 				841ED32F1E6108C700B0E70F /* GradientView.swift */,
 				841537331E5FBFE9006623C0 /* RoundedScrollView.swift */,
 				00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */,
 				00E957D21E679CA2003EDFFA /* User.swift */,
+				004E900D1E7AA45400061EB4 /* MovieTableViewCell.swift */,
+				004E90151E7AA90800061EB4 /* WishListViewController.swift */,
 				84ACF6101E4BFEE300B7E390 /* Main.storyboard */,
-				00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */,
 				84ACF6131E4BFEE300B7E390 /* Assets.xcassets */,
 				84ACF6151E4BFEE300B7E390 /* LaunchScreen.storyboard */,
 				84ACF6181E4BFEE300B7E390 /* Info.plist */,
@@ -379,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ACF60F1E4BFEE300B7E390 /* ViewController.swift in Sources */,
+				004E90161E7AA90800061EB4 /* WishListViewController.swift in Sources */,
 				84ACF62D1E4C031500B7E390 /* RatingControl.swift in Sources */,
 				84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */,
 				00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */,
@@ -387,6 +394,7 @@
 				00E957D11E679C3B003EDFFA /* FirebaseUploader.swift in Sources */,
 				847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */,
 				00E957D31E679CA2003EDFFA /* User.swift in Sources */,
+				004E900E1E7AA45400061EB4 /* MovieTableViewCell.swift in Sources */,
 				841537341E5FBFE9006623C0 /* RoundedScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

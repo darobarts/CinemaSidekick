@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var actors: UILabel!
     @IBOutlet weak var RoundedScroller: RoundedScrollView!
     @IBOutlet weak var movieRating: UILabel!
-    var movieId: Int? = nil
+    var movieId: Int = 0
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
         let uploader = FirebaseUploader()
@@ -46,6 +46,12 @@ class ViewController: UIViewController {
         movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
         
     }
+    
+    @IBAction func openSlideMenu(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let movieGetter = MovieGetter()
