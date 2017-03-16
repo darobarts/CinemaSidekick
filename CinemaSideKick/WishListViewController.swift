@@ -8,12 +8,19 @@
 
 import UIKit
 
-class WishListViewController: UIViewController {
+class WishListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var movies: UITableView!
+    @IBOutlet weak var movieViews: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let movies = UITableView(frame: view.bounds)
+        view.addSubview(movies)
+        self.movieViews = movies
+        self.movieViews.dataSource = self
+        self.movieViews.delegate = self
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +28,15 @@ class WishListViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return MovieTableViewCell()
+    }
+    
     
 
     /*

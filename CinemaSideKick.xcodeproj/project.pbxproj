@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		004E900E1E7AA45400061EB4 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004E900D1E7AA45400061EB4 /* MovieTableViewCell.swift */; };
 		004E90161E7AA90800061EB4 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004E90151E7AA90800061EB4 /* WishListViewController.swift */; };
+		0077D4581E7B09F400CC7033 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0077D4571E7B09F400CC7033 /* Movie.swift */; };
 		008698641E5E6ED10047B8BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008698631E5E6ED10047B8BB /* GoogleService-Info.plist */; };
 		00E957D11E679C3B003EDFFA /* FirebaseUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */; };
 		00E957D31E679CA2003EDFFA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E957D21E679CA2003EDFFA /* User.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		004E900D1E7AA45400061EB4 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		004E90151E7AA90800061EB4 /* WishListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		0077D4571E7B09F400CC7033 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		008698631E5E6ED10047B8BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00B227BA1E6808D4000408D1 /* CinemaSideKick.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CinemaSideKick.entitlements; sourceTree = "<group>"; };
 		00E957D01E679C3B003EDFFA /* FirebaseUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUploader.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				00E957D21E679CA2003EDFFA /* User.swift */,
 				004E900D1E7AA45400061EB4 /* MovieTableViewCell.swift */,
 				004E90151E7AA90800061EB4 /* WishListViewController.swift */,
+				0077D4571E7B09F400CC7033 /* Movie.swift */,
 				84ACF6101E4BFEE300B7E390 /* Main.storyboard */,
 				84ACF6131E4BFEE300B7E390 /* Assets.xcassets */,
 				84ACF6151E4BFEE300B7E390 /* LaunchScreen.storyboard */,
@@ -392,6 +395,7 @@
 				8493CB311E6378C90034611A /* LoginViewController.swift in Sources */,
 				841ED3301E6108C700B0E70F /* GradientView.swift in Sources */,
 				00E957D11E679C3B003EDFFA /* FirebaseUploader.swift in Sources */,
+				0077D4581E7B09F400CC7033 /* Movie.swift in Sources */,
 				847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */,
 				00E957D31E679CA2003EDFFA /* User.swift in Sources */,
 				004E900E1E7AA45400061EB4 /* MovieTableViewCell.swift in Sources */,
