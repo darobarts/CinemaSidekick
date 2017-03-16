@@ -47,11 +47,6 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func openSlideMenu(_ sender: UIBarButtonItem) {
-        
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let movieGetter = MovieGetter()
