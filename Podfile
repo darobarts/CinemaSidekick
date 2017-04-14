@@ -12,6 +12,7 @@ target 'CinemaSideKick' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
+  pod 'SideMenu'
 
   target 'CinemaSideKickTests' do
     inherit! :search_paths

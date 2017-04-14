@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var actors: UILabel!
     @IBOutlet weak var RoundedScroller: RoundedScrollView!
     @IBOutlet weak var movieRating: UILabel!
-    var movieId: Int? = nil
+    var movieId: String = ""
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
         let uploader = FirebaseUploader()
@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let movieGetter = MovieGetter()
@@ -55,9 +56,9 @@ class ViewController: UIViewController {
     func setMovieInfo(dict : NSDictionary) {
         print("Setting movie info")
         let movieGetter = MovieGetter()
-        let id = dict.value(forKey: "tmdb_id")
+        let id = dict.value(forKey: "id")
         if id != nil {
-            self.movieId = id as! Int
+            self.movieId = id as! String
         }
  
         //get poster
