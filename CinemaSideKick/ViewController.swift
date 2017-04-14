@@ -29,15 +29,26 @@ class ViewController: UIViewController {
         let auth = FIRAuth.auth()
         let userId = auth?.currentUser?.uid
         uploader.addMovieToUserWishlist(userId: userId!, movieId: String(describing: movieId))
+        
+        
+        let movieGetter = MovieGetter()
+        movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
     }
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        
+        let uploader = FirebaseUploader()
+        let auth = FIRAuth.auth()
+        let userId = auth?.currentUser?.uid
+        
+        uploader.addMovieToUserSeenList(userId: userId!, movieId: String(describing: movieId))
         
         //reset scroll box to the top after swiping
         RoundedScroller.setContentOffset(CGPoint(x: 1, y: 1), animated: true)
         
         let movieGetter = MovieGetter()
         movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        
     }
     
 
@@ -97,7 +108,7 @@ class ViewController: UIViewController {
             self.runTime.text = String(dict.value(forKey: "runtime") as! Int) + " m"
             
             //set rating
-            self.movieRating.text =  String(Int(20*(dict.value(forKey: "rating") as! Double))) + "%"
+            self.movieRating.text =  String(Int((dict.value(forKey: "rating") as! Double))) + "%"
             
             
         }

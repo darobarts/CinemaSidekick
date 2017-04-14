@@ -25,7 +25,7 @@ class FirebaseUploader {
     }
     
     func addMovieToUserSeenList(userId : String, movieId : String) {
-        addMovieToList(userId: userId, movieId: movieId, listName: "seenList")
+        addMovieToList(userId: userId, movieId: movieId, listName: "likeList")
     }
     
     private func addMovieToList(userId : String!, movieId : String!, listName : String) {
