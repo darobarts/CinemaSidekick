@@ -14,7 +14,7 @@
 		719C9CB5A73E4CD1501FF42E /* Pods_CinemaSideKick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD185E60ADA94704B50E4AA4 /* Pods_CinemaSideKick.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		841537341E5FBFE9006623C0 /* RoundedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841537331E5FBFE9006623C0 /* RoundedScrollView.swift */; };
 		841ED3301E6108C700B0E70F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ED32F1E6108C700B0E70F /* GradientView.swift */; };
-		847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C037D1E5EA11A00D9A82C /* SWRevealViewController.m */; };
+		84271D1A1E7200C900A0EB17 /* SwipeToChooseCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84271D191E7200C900A0EB17 /* SwipeToChooseCustomView.swift */; };
 		8493CB311E6378C90034611A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493CB301E6378C90034611A /* LoginViewController.swift */; };
 		84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */; };
 		84ACF60F1E4BFEE300B7E390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF60E1E4BFEE300B7E390 /* ViewController.swift */; };
@@ -46,10 +46,9 @@
 		66D8C3241CF5C5B2337C79F4 /* Pods-CinemaSideKick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSideKick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinemaSideKick/Pods-CinemaSideKick.debug.xcconfig"; sourceTree = "<group>"; };
 		841537331E5FBFE9006623C0 /* RoundedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedScrollView.swift; sourceTree = "<group>"; };
 		841ED32F1E6108C700B0E70F /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		847C03781E5E8C4500D9A82C /* CinemaSideKick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CinemaSideKick-Bridging-Header.h"; sourceTree = "<group>"; };
-		847C037C1E5EA11A00D9A82C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
-		847C037D1E5EA11A00D9A82C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		84271D191E7200C900A0EB17 /* SwipeToChooseCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeToChooseCustomView.swift; sourceTree = "<group>"; };
 		8493CB301E6378C90034611A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84996CDE1E68D11D005F1243 /* CinemaSideKick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CinemaSideKick-Bridging-Header.h"; sourceTree = "<group>"; };
 		84ACF6091E4BFEE300B7E390 /* CinemaSideKick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemaSideKick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84ACF60E1E4BFEE300B7E390 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,20 +106,9 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8486A18C1E5E8B2F003B2640 /* SWRevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				847C037C1E5EA11A00D9A82C /* SWRevealViewController.h */,
-				847C037D1E5EA11A00D9A82C /* SWRevealViewController.m */,
-				847C03781E5E8C4500D9A82C /* CinemaSideKick-Bridging-Header.h */,
-			);
-			name = SWRevealViewController;
-			sourceTree = "<group>";
-		};
 		84ACF6001E4BFEE200B7E390 = {
 			isa = PBXGroup;
 			children = (
-				8486A18C1E5E8B2F003B2640 /* SWRevealViewController */,
 				84ACF60B1E4BFEE300B7E390 /* CinemaSideKick */,
 				84ACF6201E4BFEE300B7E390 /* CinemaSideKickTests */,
 				84ACF60A1E4BFEE300B7E390 /* Products */,
@@ -142,10 +130,12 @@
 			isa = PBXGroup;
 			children = (
 				00B227BA1E6808D4000408D1 /* CinemaSideKick.entitlements */,
+				84996CDE1E68D11D005F1243 /* CinemaSideKick-Bridging-Header.h */,
 				84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */,
 				84ACF60E1E4BFEE300B7E390 /* ViewController.swift */,
 				8493CB301E6378C90034611A /* LoginViewController.swift */,
 				84ACF62C1E4C031500B7E390 /* RatingControl.swift */,
+				84271D191E7200C900A0EB17 /* SwipeToChooseCustomView.swift */,
 				841ED32F1E6108C700B0E70F /* GradientView.swift */,
 				841537331E5FBFE9006623C0 /* RoundedScrollView.swift */,
 				00F471EA1E4D07A5008EEC50 /* MovieGetter.swift */,
@@ -383,9 +373,9 @@
 				84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */,
 				00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */,
 				8493CB311E6378C90034611A /* LoginViewController.swift in Sources */,
+				84271D1A1E7200C900A0EB17 /* SwipeToChooseCustomView.swift in Sources */,
 				841ED3301E6108C700B0E70F /* GradientView.swift in Sources */,
 				00E957D11E679C3B003EDFFA /* FirebaseUploader.swift in Sources */,
-				847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */,
 				00E957D31E679CA2003EDFFA /* User.swift in Sources */,
 				841537341E5FBFE9006623C0 /* RoundedScrollView.swift in Sources */,
 			);
@@ -474,6 +464,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -515,6 +506,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};

@@ -9,6 +9,10 @@
 import UIKit
 import FirebaseAuth
 
+import MDCSwipeToChoose
+import SwipeNavigationController
+
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var ratingControl: RatingControl!
@@ -22,6 +26,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var actors: UILabel!
     @IBOutlet weak var RoundedScroller: RoundedScrollView!
     @IBOutlet weak var movieRating: UILabel!
+    @IBOutlet weak var upperView: UIView!
+    
+    
     var movieId: Int? = nil
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
@@ -31,13 +38,19 @@ class ViewController: UIViewController {
         uploader.addMovieToUserWishlist(userId: userId!, movieId: String(describing: movieId))
     }
     
+    
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         
+        
+//        upperView.mdc_swipe(.right)
+//        RoundedScroller.mdc_swipe(.right)
+
         //reset scroll box to the top after swiping
-        RoundedScroller.setContentOffset(CGPoint(x: 1, y: 1), animated: true)
+        RoundedScroller.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         
         let movieGetter = MovieGetter()
         movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        
     }
     
 
@@ -46,10 +59,13 @@ class ViewController: UIViewController {
         movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let movieGetter = MovieGetter()
         movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        
+        
     }
 
     func setMovieInfo(dict : NSDictionary) {

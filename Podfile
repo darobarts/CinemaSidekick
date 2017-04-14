@@ -12,6 +12,8 @@ target 'CinemaSideKick' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
+  pod 'MDCSwipeToChoose'
+  pod 'SwipeNavigationController', '~> 2.0.0' 
 
   target 'CinemaSideKickTests' do
     inherit! :search_paths
