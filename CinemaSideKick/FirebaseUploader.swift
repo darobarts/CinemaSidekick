@@ -26,6 +26,7 @@ class FirebaseUploader {
     
     func addMovieToUserSeenList(userId : String, movieId : String) {
         addMovieToList(userId: userId, movieId: movieId, listName: "likeList")
+        //firebase functions reccomend movies based on this list
     }
     
     private func addMovieToList(userId : String!, movieId : String!, listName : String) {

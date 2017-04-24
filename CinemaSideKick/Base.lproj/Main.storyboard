@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cbW-Kr-m13">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cbW-Kr-m13">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -402,8 +402,13 @@
                                     </label>
                                 </subviews>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DefaultMatrix" translatesAutoresizingMaskIntoConstraints="NO" id="ajF-Co-O2y">
+                                <rect key="frame" x="77" y="113" width="220" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ego-cb-kgS">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="CinemaSideKick" id="Uwv-RG-D0K">
                                         <barButtonItem key="leftBarButtonItem" image="MenuIcon" id="8Qt-c9-M6L" userLabel="MenuButton">
@@ -414,11 +419,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DefaultMatrix" translatesAutoresizingMaskIntoConstraints="NO" id="ajF-Co-O2y">
-                                <rect key="frame" x="77" y="113" width="220" height="209"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.23770908323036233" green="0.23770908323036233" blue="0.23770908323036233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -439,6 +439,7 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="pLz-QV-tcc" appends="YES" id="OYl-1f-7Gc"/>
                             <outletCollection property="gestureRecognizers" destination="Tis-bp-Bkb" appends="YES" id="xcq-R1-bWg"/>
+                            <outletCollection property="gestureRecognizers" destination="xRS-56-JiF" appends="YES" id="Y0W-pE-jfp"/>
                         </connections>
                     </view>
                     <connections>
@@ -449,6 +450,7 @@
                         <outlet property="moviePoster" destination="ajF-Co-O2y" id="FqD-Qc-aBE"/>
                         <outlet property="movieRating" destination="uKL-zS-Pwc" id="6sW-Ze-jpe"/>
                         <outlet property="movieTitle" destination="yHR-gS-Rwp" id="QP4-xM-iDW"/>
+                        <outlet property="ratingButtons" destination="QdZ-xY-e6H" id="ttg-cZ-smg"/>
                         <outlet property="ratingControl" destination="QdZ-xY-e6H" id="mpR-1N-9sC"/>
                         <outlet property="releaseDate" destination="e6a-VW-f4b" id="13X-J5-Mnk"/>
                         <outlet property="runTime" destination="DyY-A2-Dgt" id="jTa-fk-ALw"/>
@@ -456,7 +458,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="cKF-HI-RWD"/>
                 <swipeGestureRecognizer direction="right" id="pLz-QV-tcc" userLabel="SwipeToRightRecognizer">
                     <connections>
                         <action selector="swipeRight:" destination="BYZ-38-t0r" id="gSf-0W-kWr"/>
@@ -465,6 +466,11 @@
                 <swipeGestureRecognizer direction="up" id="Tis-bp-Bkb" userLabel="SwipeUpRecognizer">
                     <connections>
                         <action selector="swipeUp:" destination="BYZ-38-t0r" id="fTZ-dy-GHD"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="xRS-56-JiF">
+                    <connections>
+                        <action selector="swipeLeftTesting:" destination="BYZ-38-t0r" id="fWU-mb-Rnh"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -494,6 +500,6 @@
         <image name="launchScreen" width="518" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="46t-UE-3N7"/>
+        <segue reference="Dwf-SX-1a5"/>
     </inferredMetricsTieBreakers>
 </document>

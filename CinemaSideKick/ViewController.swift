@@ -22,7 +22,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var actors: UILabel!
     @IBOutlet weak var RoundedScroller: RoundedScrollView!
     @IBOutlet weak var movieRating: UILabel!
+    @IBOutlet weak var ratingButtons: RatingControl!
+    
+    
     var movieId: String = ""
+    
+    @IBAction func swipeLeftTesting(_ sender: UISwipeGestureRecognizer) {
+        
+        let movieGetter = MovieGetter()
+        movieGetter.getQueue(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        
+        print("got here")
+        
+    }
+    
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
         let uploader = FirebaseUploader()
@@ -110,6 +123,8 @@ class ViewController: UIViewController {
             //set rating
             self.movieRating.text =  String(Int((dict.value(forKey: "rating") as! Double))) + "%"
             
+            //set rating stars to correspond to rating initially
+            self.ratingButtons.rating = Int((dict.value(forKey: "rating") as! Double))/20
             
         }
 
