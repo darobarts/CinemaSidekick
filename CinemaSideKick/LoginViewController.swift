@@ -45,8 +45,10 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                     let uploader = FirebaseUploader()
                     uploader.addUser(user: User(id: (user?.uid)!, name: (user?.displayName)!))
                     //move displays to next View
-                    let movieView = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController
-                    self.navigationController?.pushViewController(movieView!, animated: true)
+                    self.performSegue(withIdentifier: "mainSegue", sender: nil)
+
+                    //let movieView = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController
+                    //self.navigationController?.pushViewController(movieView!, animated: true)
                 }
                 
             }

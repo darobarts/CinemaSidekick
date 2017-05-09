@@ -23,45 +23,73 @@ class ViewController: UIViewController {
     @IBOutlet weak var RoundedScroller: RoundedScrollView!
     @IBOutlet weak var movieRating: UILabel!
     @IBOutlet weak var ratingButtons: RatingControl!
+    @IBOutlet weak var upperView: UIView!
     
     
     var movieId: String = ""
     
-    @IBAction func swipeLeftTesting(_ sender: UISwipeGestureRecognizer) {
+    @IBAction func addToWishlist(_ sender: UIBarButtonItem) {
+        let uploader = FirebaseUploader()
+        let auth = FIRAuth.auth()
+        let userId = auth?.currentUser?.uid
         
-        let movieGetter = MovieGetter()
-        movieGetter.getQueue(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
-        
-        print("got here")
-        
+        uploader.addMovieToUserWishlist(userId: userId!, movieId: String(describing: movieId))
     }
     
-    
+    // add movie to pass-list pull movie from queue
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
         let uploader = FirebaseUploader()
         let auth = FIRAuth.auth()
         let userId = auth?.currentUser?.uid
-        uploader.addMovieToUserWishlist(userId: userId!, movieId: String(describing: movieId))
         
         
+//        uploader.addMovieToUserWishlist(userId: userId!, movieId: String(describing: movieId))
+        
+        //add movie to pass-list
+        uploader.addMovieToUserPassList(userId: userId!, movieId: String(describing: movieId))
+        
+        //pull movie from queue
         let movieGetter = MovieGetter()
-        movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        movieGetter.getQueue(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        
+        //reset scroll box to the top after swiping
+        RoundedScroller.setContentOffset(CGPoint(x: 0, y: -50), animated: true)
     }
     
+    // add movie to hate-list pull movie from queue
+    @IBAction func swipeLeftTesting(_ sender: UISwipeGestureRecognizer) {
+        
+        let uploader = FirebaseUploader()
+        let auth = FIRAuth.auth()
+        let userId = auth?.currentUser?.uid
+        
+        //add to hate-list
+        uploader.addMovieToUserHateList(userId: userId!, movieId: String(describing: movieId))
+        
+        //pull from queue
+        let movieGetter = MovieGetter()
+        movieGetter.getQueue(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        
+        //reset scroll box to the top after swiping
+        RoundedScroller.setContentOffset(CGPoint(x: 0, y: -50), animated: true)
+    }
+    
+    // add movie to liked-list, pull from queue
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         
         let uploader = FirebaseUploader()
         let auth = FIRAuth.auth()
         let userId = auth?.currentUser?.uid
         
+        //add to liked-list
         uploader.addMovieToUserSeenList(userId: userId!, movieId: String(describing: movieId))
         
-        //reset scroll box to the top after swiping
-        RoundedScroller.setContentOffset(CGPoint(x: 1, y: 1), animated: true)
-        
+        //pull from queue
         let movieGetter = MovieGetter()
-        movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        movieGetter.getQueue(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
         
+        //reset scroll box to the top after swiping
+        RoundedScroller.setContentOffset(CGPoint(x: 0, y: -50), animated: true)
     }
     
 
@@ -75,6 +103,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let movieGetter = MovieGetter()
         movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
+        
+        navigationController?.navigationBar.barStyle = UIBarStyle.black
+
+        //reset scroll box to the top after swiping
+        RoundedScroller.setContentOffset(CGPoint(x: 0, y: -50), animated: true)
+//        upperView.layer.cornerRadius = 5
+        upperView.layer.shadowColor = UIColor.darkGray.cgColor
+        upperView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        upperView.layer.shadowOpacity = 1.0
+        upperView.layer.shadowRadius = 2
+        
+        moviePoster.layer.shadowColor = UIColor.darkGray.cgColor
+        moviePoster.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        moviePoster.layer.shadowOpacity = 1.0
+        moviePoster.layer.shadowRadius = 10
     }
 
     func setMovieInfo(dict : NSDictionary) {
@@ -106,15 +149,17 @@ class ViewController: UIViewController {
             //set genre
             var genreString = ""
             for (genre, _) in dict.value(forKey: "genres") as! NSDictionary {
-                genreString += String(describing: genre) + ","
+                genreString += String(describing: genre) + ", "
             }
-            self.genres.text = genreString.trimmingCharacters(in: CharacterSet.punctuationCharacters)
+            self.genres.text = genreString.substring(to: genreString.index(genreString.endIndex, offsetBy: -2))
+            //self.genres.text = genreString.trimmingCharacters(in: CharacterSet.punctuationCharacters)
             
             //set actors
             var actorString = ""
             for (actor, _) in dict.value(forKey: "actors") as! NSDictionary {
-                actorString += String(describing: actor) + ","
+                actorString += String(describing: actor) + ", "
             }
+            self.actors.text = actorString.substring(to: actorString.index(actorString.endIndex, offsetBy: -2))
             self.actors.text = actorString.trimmingCharacters(in: CharacterSet.punctuationCharacters)
             
             //set runTime
@@ -168,6 +213,10 @@ class ViewController: UIViewController {
         if(num == "12"){return "December"}
         
         return "##"
+    }
+    
+    @IBAction func unwindToMain(segue : UIStoryboardSegue) {
+        
     }
 
 

@@ -20,12 +20,26 @@ class FirebaseUploader {
 
     }
     
+    //add movie to wish-list if user pressed button
     func addMovieToUserWishlist(userId : String, movieId : String) {
         addMovieToList(userId: userId, movieId: movieId, listName: "wishList")
     }
     
+    //add movie to like-list if user swiped right
     func addMovieToUserSeenList(userId : String, movieId : String) {
         addMovieToList(userId: userId, movieId: movieId, listName: "likeList")
+        //firebase functions reccomend movies based on this list
+    }
+    
+    // add a movie to hate-list if user swiped left
+    func addMovieToUserHateList(userId : String, movieId : String) {
+        addMovieToList(userId: userId, movieId: movieId, listName: "hateList")
+
+    }
+    
+    //add movie to pass-list if user swiped up
+    func addMovieToUserPassList(userId : String, movieId : String) {
+        addMovieToList(userId: userId, movieId: movieId, listName: "passList")
         //firebase functions reccomend movies based on this list
     }
     

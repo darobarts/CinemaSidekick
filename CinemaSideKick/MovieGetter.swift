@@ -35,7 +35,7 @@ class MovieGetter {
         
     }
     
-    //firebase movie getter funciton
+    //firebase random movie getter funciton
     func getMovie(completion : @escaping (NSDictionary) ->()) {
         var ref : FIRDatabaseReference!
         ref = FIRDatabase.database().reference()
