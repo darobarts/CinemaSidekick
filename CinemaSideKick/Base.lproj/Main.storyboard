@@ -68,9 +68,6 @@
                                                     <rect key="frame" x="8" y="6" width="367" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="WishList"/>
-                                                    <connections>
-                                                        <segue destination="xPQ-Sy-iVh" kind="show" id="epy-jQ-EPe"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -109,67 +106,112 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8r-Od-mWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nJv-Wx-IDR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="666.11694152923542"/>
+            <point key="canvasLocation" x="3804" y="-321.58920539730138"/>
         </scene>
-        <!--Wish List View Controller-->
+        <!--Wishlist-->
         <scene sceneID="Evp-wE-oCy">
             <objects>
-                <viewController id="xPQ-Sy-iVh" customClass="WishListViewController" customModule="CinemaSideKick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="xPQ-Sy-iVh" customClass="WishListViewController" customModule="CinemaSideKick" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZCO-RZ-0wB"/>
                         <viewControllerLayoutGuide type="bottom" id="hDz-Nj-Ff9"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1hE-Ql-yg3">
+                    <view key="view" contentMode="scaleToFill" id="1hE-Ql-yg3" customClass="GradientView" customModule="CinemaSideKick" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3GS-0L-GHl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Wish List" id="Ifj-s0-9Ct">
-                                        <barButtonItem key="leftBarButtonItem" image="MenuIcon" id="GUO-wx-TcP">
-                                            <connections>
-                                                <segue destination="DIb-wU-TBF" kind="presentation" id="46t-UE-3N7"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-FZ-GRM">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TA9-f1-v4N">
+                                <rect key="frame" x="16" y="247" width="343" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-FZ-GRM">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="400"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="wishlistCell" rowHeight="80" id="6Cs-tP-s8x" customClass="WishlistTVCell" customModule="CinemaSideKick" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="343" height="80"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Cs-tP-s8x" id="LnI-S3-twk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="79.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DefaultMatrix" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cy-83g">
+                                                            <rect key="frame" x="8" y="8" width="60" height="64"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRx-Ye-Igp">
+                                                            <rect key="frame" x="76" y="8" width="259" height="31"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="director" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eV-IN-unX">
+                                                            <rect key="frame" x="76" y="59" width="130" height="13"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="runtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhv-5L-hQ3">
+                                                            <rect key="frame" x="235" y="57" width="100" height="15"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzB-eD-WqR">
+                                                            <rect key="frame" x="76" y="37" width="259" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outlet property="directorLabel" destination="8eV-IN-unX" id="nAR-HE-L2e"/>
+                                                    <outlet property="genreLabel" destination="TzB-eD-WqR" id="Qhd-Ja-6iT"/>
+                                                    <outlet property="poster" destination="Lkl-cy-83g" id="Rww-4O-53G"/>
+                                                    <outlet property="runtimeLabel" destination="Mhv-5L-hQ3" id="5iA-vs-87G"/>
+                                                    <outlet property="titleLabel" destination="uRx-Ye-Igp" id="EYI-Lz-mvA"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="xPQ-Sy-iVh" id="TOl-16-cGr"/>
+                                            <outlet property="delegate" destination="xPQ-Sy-iVh" id="EXi-6I-OEb"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="6Cs-tP-s8x">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Cs-tP-s8x" id="LnI-S3-twk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="xPQ-Sy-iVh" id="TOl-16-cGr"/>
-                                    <outlet property="delegate" destination="xPQ-Sy-iVh" id="EXi-6I-OEb"/>
-                                </connections>
-                            </tableView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Wishlist" id="jLj-VN-U88">
+                        <barButtonItem key="leftBarButtonItem" image="MenuIcon" id="4xL-EE-Gzf">
+                            <connections>
+                                <segue destination="ReE-Pa-7Z9" kind="unwind" unwindAction="unwindToMainWithSegue:" id="RFc-S2-BfA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="TA9-f1-v4N" id="Scw-Zn-CQa"/>
                         <outlet property="tableView" destination="1PT-FZ-GRM" id="Ogs-AV-QpM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YA-aq-t71" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ReE-Pa-7Z9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3440.8000000000002" y="627.4362818590705"/>
+            <point key="canvasLocation" x="2636" y="142.57871064467767"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="X38-gM-BPY">
             <objects>
-                <navigationController id="DIb-wU-TBF" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                <navigationController modalTransitionStyle="partialCurl" id="DIb-wU-TBF" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0qI-fX-ZOm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -183,7 +225,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztU-BN-XbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="-101.19940029985008"/>
+            <point key="canvasLocation" x="1924" y="-740"/>
         </scene>
         <!--CinemaSideKick-->
         <scene sceneID="tne-QT-ifu">
@@ -437,7 +479,7 @@
                     <navigationItem key="navigationItem" title="CinemaSideKick" id="zNi-oQ-l56">
                         <barButtonItem key="leftBarButtonItem" image="MenuIcon" id="DGq-Cp-wwv">
                             <connections>
-                                <segue destination="DIb-wU-TBF" kind="presentation" id="9De-qC-WJp"/>
+                                <segue destination="Ufo-YF-Tvm" kind="presentation" identifier="wishSegue" modalTransitionStyle="flipHorizontal" id="hlM-gD-bV8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aWJ-oF-hJF">
@@ -479,7 +521,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1068" y="136.28185907046478"/>
+            <point key="canvasLocation" x="742" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V6a-eB-yIr">
@@ -513,7 +555,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TL1-j8-rh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-156" y="448"/>
+            <point key="canvasLocation" x="-158" y="143"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RMU-Mo-tfv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ufo-YF-Tvm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aut-Cu-BLQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xPQ-Sy-iVh" kind="relationship" relationship="rootViewController" id="aae-wY-rK6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyk-Ur-YTE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1696.8" y="142.57871064467767"/>
         </scene>
     </scenes>
     <resources>
@@ -522,7 +582,4 @@
         <image name="UserRating" width="512" height="512"/>
         <image name="launchScreen" width="518" height="500"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="9De-qC-WJp"/>
-    </inferredMetricsTieBreakers>
 </document>

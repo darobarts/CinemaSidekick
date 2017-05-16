@@ -17,6 +17,7 @@
 		719C9CB5A73E4CD1501FF42E /* Pods_CinemaSideKick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD185E60ADA94704B50E4AA4 /* Pods_CinemaSideKick.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		841537341E5FBFE9006623C0 /* RoundedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841537331E5FBFE9006623C0 /* RoundedScrollView.swift */; };
 		841ED3301E6108C700B0E70F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ED32F1E6108C700B0E70F /* GradientView.swift */; };
+		845F95A71ECB5D5C00B2B9B9 /* WishlistTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F95A61ECB5D5C00B2B9B9 /* WishlistTVCell.swift */; };
 		847C037E1E5EA11A00D9A82C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C037D1E5EA11A00D9A82C /* SWRevealViewController.m */; };
 		8493CB311E6378C90034611A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493CB301E6378C90034611A /* LoginViewController.swift */; };
 		84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACF60C1E4BFEE300B7E390 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		66D8C3241CF5C5B2337C79F4 /* Pods-CinemaSideKick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinemaSideKick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinemaSideKick/Pods-CinemaSideKick.debug.xcconfig"; sourceTree = "<group>"; };
 		841537331E5FBFE9006623C0 /* RoundedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedScrollView.swift; sourceTree = "<group>"; };
 		841ED32F1E6108C700B0E70F /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		845F95A61ECB5D5C00B2B9B9 /* WishlistTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistTVCell.swift; sourceTree = "<group>"; };
 		847C03781E5E8C4500D9A82C /* CinemaSideKick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CinemaSideKick-Bridging-Header.h"; sourceTree = "<group>"; };
 		847C037C1E5EA11A00D9A82C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		847C037D1E5EA11A00D9A82C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				008698631E5E6ED10047B8BB /* GoogleService-Info.plist */,
 				0077D4591E7B0F4E00CC7033 /* FirebaseResourceManager.swift */,
 				00D14B041E7B2A7700222ACD /* WishListViewController.swift */,
+				845F95A61ECB5D5C00B2B9B9 /* WishlistTVCell.swift */,
 			);
 			path = CinemaSideKick;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			files = (
 				84ACF60F1E4BFEE300B7E390 /* ViewController.swift in Sources */,
 				84ACF62D1E4C031500B7E390 /* RatingControl.swift in Sources */,
+				845F95A71ECB5D5C00B2B9B9 /* WishlistTVCell.swift in Sources */,
 				84ACF60D1E4BFEE300B7E390 /* AppDelegate.swift in Sources */,
 				00F471EB1E4D07A5008EEC50 /* MovieGetter.swift in Sources */,
 				8493CB311E6378C90034611A /* LoginViewController.swift in Sources */,

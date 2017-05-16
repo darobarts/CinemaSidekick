@@ -28,13 +28,22 @@ class ViewController: UIViewController {
     
     var movieId: String = ""
     
+    var currMovie: Movie?
+    var movieWishList = [Movie]()
+    
     @IBAction func addToWishlist(_ sender: UIBarButtonItem) {
         let uploader = FirebaseUploader()
         let auth = FIRAuth.auth()
         let userId = auth?.currentUser?.uid
         
+        if(movieWishList.contains(where: hasMovie) == false) {
+            movieWishList.append(currMovie!)
+
+        }
+        
         uploader.addMovieToUserWishlist(userId: userId!, movieId: String(describing: movieId))
     }
+    
     
     // add movie to pass-list pull movie from queue
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
@@ -127,12 +136,6 @@ class ViewController: UIViewController {
         if id != nil {
             self.movieId = id as! String
         }
- 
-        //get poster
-        movieGetter.getPoster(posterPath: dict.value(forKey :"poster_path") as! String, completion: {(data : Data)->()
-                in DispatchQueue.main.async {
-                    self.moviePoster.image = UIImage(data : data) }
-                })
         
         DispatchQueue.main.async {
             self.movieTitle.text = dict.value(forKey: "title") as! String?
@@ -170,6 +173,17 @@ class ViewController: UIViewController {
             
             //set rating stars to correspond to rating initially
             self.ratingButtons.rating = Int((dict.value(forKey: "rating") as! Double))/20
+            
+            //get poster
+            movieGetter.getPoster(posterPath: dict.value(forKey :"poster_path") as! String, completion: {(data : Data)->()
+                in DispatchQueue.main.async {
+                    self.moviePoster.image = UIImage(data : data)
+                    
+                    //set currentMovie object to send to wishlist possibly
+                    self.currMovie = Movie.init(title: self.movieTitle.text!, poster: self.moviePoster.image!, synopsis: self.synopsis.text!, releaseDate: self.releaseDate.text!, director: self.director.text!, genres: self.genres.text!, actors: self.actors.text!, runtime: self.runTime.text!, rating: self.movieRating.text!)
+                }
+            })
+    
             
         }
 
@@ -215,8 +229,40 @@ class ViewController: UIViewController {
         return "##"
     }
     
+    func hasMovie(check: Movie) -> Bool {
+        
+        for movie in movieWishList {
+            if(movie.title == currMovie?.title) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    
+    
+    //MARK: Navigation
+    
+    //need to erase movie from wishlist array if it was removed on other page
     @IBAction func unwindToMain(segue : UIStoryboardSegue) {
         
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        //if was this segue
+        if segue.identifier == "wishSegue" {
+            let navVC = segue.destination as? UINavigationController
+            let destinationVC = navVC?.viewControllers.first as! WishListViewController
+            
+            destinationVC.movieData = movieWishList
+            
+        }
     }
 
 
