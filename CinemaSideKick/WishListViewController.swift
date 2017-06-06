@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
+
 
 class WishListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -17,6 +20,7 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     @IBAction func listChoice(_ sender: UISegmentedControl) {
         if(sender.selectedSegmentIndex == 0) {
@@ -66,7 +70,16 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
             movieData!.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             //***Delete data from correct array here depending on segment index ****
-            
+            //wishlist
+            if(segmentControl.selectedSegmentIndex == 0) {
+                wishMovieData!.remove(at: indexPath.row)
+                removeFromQueue(valInQueue: (wishMovieData?[indexPath.row].key)!)
+            }//likedList
+            else if(segmentControl.selectedSegmentIndex == 1) {
+                seenMovieData!.remove(at: indexPath.row)
+                removeFromQueue(valInQueue: (seenMovieData?[indexPath.row].key)!)
+
+            }
             
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -130,15 +143,39 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         self.navigationItem.rightBarButtonItem = doneButton
         
     }
+    
+    //remove movie from selected list given it's key
+    func removeFromQueue(valInQueue : String) {
+        
+        let auth = FIRAuth.auth()
+        let userId = auth?.currentUser?.uid
+        
+        var ref : FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        
+        //wishlist
+        if(segmentControl.selectedSegmentIndex == 0) {
+            ref.child("users").child(userId!).child("wishList").child(valInQueue).removeValue()
+            
+        }//likedList
+        else if(segmentControl.selectedSegmentIndex == 1) {
+            ref.child("users").child(userId!).child("likeList").child(valInQueue).removeValue()
 
-    /*
+        }
+        
+        
+    }
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        //**** SEND BACK ARRAYS on unwind ****
     }
-    */
+    
 
 }

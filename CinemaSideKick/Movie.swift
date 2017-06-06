@@ -19,9 +19,10 @@ class Movie {
     var actors: String
     var runtime: String
     var rating: String
+    var key: String
     
     //initializer
-    init(title: String, poster: UIImage, synopsis: String, releaseDate: String, director: String, genres: String, actors: String, runtime: String, rating: String) {
+    init(title: String, poster: UIImage, synopsis: String, releaseDate: String, director: String, genres: String, actors: String, runtime: String, rating: String, key: String) {
         
         self.title = title
         self.poster = poster
@@ -32,6 +33,7 @@ class Movie {
         self.actors = actors
         self.runtime = runtime
         self.rating = rating
+        self.key = key
         
     }
 

@@ -187,7 +187,7 @@ class ViewController: UIViewController {
                     self.moviePoster.image = UIImage(data : data)
                     
                     //set currentMovie object to send to wishlist possibly
-                    self.currMovie = Movie.init(title: self.movieTitle.text!, poster: self.moviePoster.image!, synopsis: self.synopsis.text!, releaseDate: self.releaseDate.text!, director: self.director.text!, genres: self.genres.text!, actors: self.actors.text!, runtime: self.runTime.text!, rating: self.movieRating.text!)
+                    self.currMovie = Movie.init(title: self.movieTitle.text!, poster: self.moviePoster.image!, synopsis: self.synopsis.text!, releaseDate: self.releaseDate.text!, director: self.director.text!, genres: self.genres.text!, actors: self.actors.text!, runtime: self.runTime.text!, rating: self.movieRating.text!, key: self.movieId)
                 }
             })
     
@@ -264,7 +264,13 @@ class ViewController: UIViewController {
     
     //need to erase movie from wishlist array if it was removed on other page
     @IBAction func unwindToMain(segue : UIStoryboardSegue) {
-        
+        //set like/wishlist arrays to the ones sent from wishlist/likedlist view controller
+        if let sourceViewController = segue.source as? WishListViewController {
+            
+            movieWishList = sourceViewController.wishMovieData!
+            movieSeenList = sourceViewController.seenMovieData!
+            
+        }
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -203,7 +203,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Wish List"/>
-                                <segment title="Seen List"/>
+                                <segment title="Liked List"/>
                             </segments>
                             <connections>
                                 <action selector="listChoice:" destination="xPQ-Sy-iVh" eventType="valueChanged" id="6tm-Lm-e5J"/>
@@ -212,6 +212,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="TA9-f1-v4N" id="Scw-Zn-CQa"/>
+                        <outlet property="segmentControl" destination="rhv-1a-axM" id="67w-VK-fDC"/>
                         <outlet property="tableView" destination="1PT-FZ-GRM" id="Ogs-AV-QpM"/>
                     </connections>
                 </viewController>
