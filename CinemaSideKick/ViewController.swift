@@ -31,6 +31,8 @@ class ViewController: UIViewController {
     var currMovie: Movie?
     var movieWishList = [Movie]()
     var movieSeenList = [Movie]()
+    var movieHateList = [Movie]()
+
 
     
     @IBAction func addToWishlist(_ sender: UIBarButtonItem) {
@@ -73,6 +75,11 @@ class ViewController: UIViewController {
         let uploader = FirebaseUploader()
         let auth = FIRAuth.auth()
         let userId = auth?.currentUser?.uid
+        
+        if(movieHateList.contains(where: hasHateMovie) == false) {
+            movieHateList.append(currMovie!)
+            
+        }
         
         //add to hate-list
         uploader.addMovieToUserHateList(userId: userId!, movieId: String(describing: movieId))
@@ -117,6 +124,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        giveInstructions()
+        
         let movieGetter = MovieGetter()
         movieGetter.getMovie(completion : {(json : NSDictionary)->() in  self.setMovieInfo(dict: json)})
         
@@ -134,6 +143,25 @@ class ViewController: UIViewController {
         moviePoster.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         moviePoster.layer.shadowOpacity = 1.0
         moviePoster.layer.shadowRadius = 10
+    }
+    
+    func giveInstructions() {
+        let details = "Swipe → to get similar suggestions.\nSwipe ← to dislike suggestion.\n Swipe ↑ to pass on rating"
+        
+        let alert = UIAlertController(title: "Instructions", message: details, preferredStyle: .alert)
+        //define actions using callbacks (this is information going to pass you "alert:UIAlertAction" will be that type and return void)
+        let defaultAction = UIAlertAction(title: "Got It!", style: .default) {
+            //closure is third argument that is between brackets
+            (alert: UIAlertAction!) -> Void in
+            NSLog("You pressed button OK")
+        }
+        
+        //associate alert with the controller action
+        alert.addAction(defaultAction)
+        
+        // PRESENT it to the view controller storyboard
+        present(alert, animated: true, completion:nil) //nil param stands for i want to do something once view has become visible
+
     }
 
     func setMovieInfo(dict : NSDictionary) {
@@ -258,6 +286,17 @@ class ViewController: UIViewController {
         return false
     }
     
+    func hasHateMovie(check: Movie) -> Bool {
+        
+        for movie in movieHateList {
+            if(movie.title == currMovie?.title) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     
     
     //MARK: Navigation
@@ -269,6 +308,7 @@ class ViewController: UIViewController {
             
             movieWishList = sourceViewController.wishMovieData!
             movieSeenList = sourceViewController.seenMovieData!
+            movieHateList = sourceViewController.hateMovieData!
             
         }
     }
@@ -286,6 +326,7 @@ class ViewController: UIViewController {
             
             destinationVC.wishMovieData = movieWishList
             destinationVC.seenMovieData = movieSeenList
+            destinationVC.hateMovieData = movieHateList
             
         }
     }

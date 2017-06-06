@@ -16,11 +16,33 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
     var movieData : [Movie]?
     var seenMovieData : [Movie]?
     var wishMovieData : [Movie]?
+    var hateMovieData : [Movie]?
     
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    
+    @IBAction func getInstructions(_ sender: UIButton) {
+        
+        let details = "Swipe → to get similar suggestions.\nSwipe ← to dislike suggestion.\n Swipe ↑ to pass on rating"
+            
+        let alert = UIAlertController(title: "Instructions", message: details, preferredStyle: .alert)
+        //define actions using callbacks (this is information going to pass you "alert:UIAlertAction" will be that type and return void)
+        let defaultAction = UIAlertAction(title: "Got It!", style: .default) {
+            //closure is third argument that is between brackets
+            (alert: UIAlertAction!) -> Void in
+            NSLog("You pressed button OK")
+        }
+            
+        //associate alert with the controller action
+        alert.addAction(defaultAction)
+            
+        // PRESENT it to the view controller storyboard
+        present(alert, animated: true, completion:nil) //nil param stands for i want to do something once view has become visible
+            
+        
+    }
     
     @IBAction func listChoice(_ sender: UISegmentedControl) {
         if(sender.selectedSegmentIndex == 0) {
@@ -29,6 +51,10 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         else if(sender.selectedSegmentIndex == 1) {
             movieData = seenMovieData
+            tableView.reloadData()
+        }
+        else if(sender.selectedSegmentIndex == 2) {
+            movieData = hateMovieData
             tableView.reloadData()
         }
     }
@@ -79,6 +105,11 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
                 seenMovieData!.remove(at: indexPath.row)
                 removeFromQueue(valInQueue: (seenMovieData?[indexPath.row].key)!)
 
+            }
+            else if(segmentControl.selectedSegmentIndex == 2) {
+                hateMovieData!.remove(at: indexPath.row)
+                removeFromQueue(valInQueue: (hateMovieData?[indexPath.row].key)!)
+                
             }
             
         } else if editingStyle == .insert {
@@ -161,6 +192,10 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         else if(segmentControl.selectedSegmentIndex == 1) {
             ref.child("users").child(userId!).child("likeList").child(valInQueue).removeValue()
 
+        }
+        else if(segmentControl.selectedSegmentIndex == 2) {
+            ref.child("users").child(userId!).child("hateList").child(valInQueue).removeValue()
+            
         }
         
         
