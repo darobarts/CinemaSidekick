@@ -30,13 +30,15 @@ class ViewController: UIViewController {
     
     var currMovie: Movie?
     var movieWishList = [Movie]()
+    var movieSeenList = [Movie]()
+
     
     @IBAction func addToWishlist(_ sender: UIBarButtonItem) {
         let uploader = FirebaseUploader()
         let auth = FIRAuth.auth()
         let userId = auth?.currentUser?.uid
         
-        if(movieWishList.contains(where: hasMovie) == false) {
+        if(movieWishList.contains(where: hasWishMovie) == false) {
             movieWishList.append(currMovie!)
 
         }
@@ -89,6 +91,11 @@ class ViewController: UIViewController {
         let uploader = FirebaseUploader()
         let auth = FIRAuth.auth()
         let userId = auth?.currentUser?.uid
+        
+        if(movieSeenList.contains(where: hasSeenMovie) == false) {
+            movieSeenList.append(currMovie!)
+            
+        }
         
         //add to liked-list
         uploader.addMovieToUserSeenList(userId: userId!, movieId: String(describing: movieId))
@@ -229,9 +236,20 @@ class ViewController: UIViewController {
         return "##"
     }
     
-    func hasMovie(check: Movie) -> Bool {
+    func hasWishMovie(check: Movie) -> Bool {
         
         for movie in movieWishList {
+            if(movie.title == currMovie?.title) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func hasSeenMovie(check: Movie) -> Bool {
+        
+        for movie in movieSeenList {
             if(movie.title == currMovie?.title) {
                 return true
             }
@@ -260,7 +278,8 @@ class ViewController: UIViewController {
             let navVC = segue.destination as? UINavigationController
             let destinationVC = navVC?.viewControllers.first as! WishListViewController
             
-            destinationVC.movieData = movieWishList
+            destinationVC.wishMovieData = movieWishList
+            destinationVC.seenMovieData = movieSeenList
             
         }
     }

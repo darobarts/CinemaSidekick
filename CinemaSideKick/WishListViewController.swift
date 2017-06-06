@@ -11,11 +11,23 @@ import UIKit
 class WishListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var movieData : [Movie]?
+    var seenMovieData : [Movie]?
+    var wishMovieData : [Movie]?
     
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func listChoice(_ sender: UISegmentedControl) {
+        if(sender.selectedSegmentIndex == 0) {
+            movieData = wishMovieData
+            tableView.reloadData()
+        }
+        else if(sender.selectedSegmentIndex == 1) {
+            movieData = seenMovieData
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +50,7 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
         containerView.layer.cornerRadius = 5
         
         // Do any additional setup after loading the view.
-
+        movieData = wishMovieData
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +65,9 @@ class WishListViewController: UIViewController, UITableViewDataSource, UITableVi
             // Delete the row from the data source
             movieData!.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            //***Delete data from correct array here depending on segment index ****
+            
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
