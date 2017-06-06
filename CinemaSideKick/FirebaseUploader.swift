@@ -15,8 +15,8 @@ class FirebaseUploader {
     
     func addUser(user : User) {
         ref = FIRDatabase.database().reference()
-        let userDict = user.getDictView()
-        ref.child("users").child(user.id).setValue(userDict)
+        ref.child("users").child(user.id).child("id").setValue(user.id)
+        ref.child("users").child(user.id).child("name").setValue(user.name)
 
     }
     
